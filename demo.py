@@ -45,11 +45,11 @@ def generate_faces(pipe, task):
 	if not os.path.exists(directory):
 			os.makedirs(directory)
 
-	# for i, image in enumerate(image_list):
-	# 	# image.save(f"images/face_{i}.png")
-	# 	file_path = f"{directory}/{prompt_input[i]}_{i}.png"
+	for i, image in enumerate(image_list):
+		# image.save(f"images/face_{i}.png")
+		file_path = f"{directory}/{prompt_input[i]}_{i}.png"
 		
-	# 	image.save(file_path)
+		image.save(file_path)
 
 # For glasses
 # for i in range(0, 7):
