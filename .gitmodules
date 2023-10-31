@@ -1,0 +1,9 @@
+[submodule "src/clip"]
+	path = src/clip
+	url = https://github.com/harsh242bu/CLIP.git
+[submodule "src/taming-transformers"]
+	path = src/taming-transformers
+	url = https://github.com/harsh242bu/taming-transformers.git
+[submodule "src/visual_taste_approximator"]
+	path = src/visual_taste_approximator
+	url = https://github.com/harsh242bu/visual_taste_approximator.git
