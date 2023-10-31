@@ -18,15 +18,17 @@ conda install pytorch torchvision -c pytorch
 pip install transformers==4.19.2 diffusers invisible-watermark
 pip install -e .
 ``` 
-PS: This environment file is incomplete at the moment
+PS: This environment file is incomplete at the moment. Please follow the instructions above and then install the additional libraries yourself. Update to the environment file coming soon.
 
-### Face generation Script
-Tune the parameters in params.py to generate images according to your machine's capacity
+## Face generation Script
+Tune the parameters in params.py to generate images according to your machine's capacity.
 
 ```
 python demo.py
 ```
 
+## Images generated
+Generated images can be found in specs_data folder.
 
 ## Reference
 
