@@ -23,8 +23,12 @@ def get_prompt_list(task, num_images=params.num_images):
         race = np.random.choice(params.race_list)
         gender = np.random.choice(params.gender_list)
         prompt = f"Face of a {race} {gender} with {task}"
+        if task == params.eyes_task[1]:
+            # prompt = f"A portrait of a {race} {gender}"
+            prompt = f"Face of a {race} {gender}"
         prompt_list.append(prompt)
-
+    
+    prompt_list.sort()
     neg_prompt_list = [params.negative_prompt]*num_images
 
     return prompt_list, neg_prompt_list

@@ -2,14 +2,15 @@ name: face-gen
 channels:
   - pytorch
   - defaults
+  - conda-forge
 dependencies:
   - python=3.8.5
-  - pip=20.3
-  - cudatoolkit=11.3
-  - pytorch=1.11.0
+  - pip=20.3.3
+  - cudatoolkit=11.3.1
   - torchvision=0.12.0
-  - numpy=1.19.2
+  - numpy=1.24.4
   - pip:
+    - accelerate==0.24.1
     - albumentations==0.4.3
     - diffusers
     - opencv-python==4.1.2.30
@@ -22,10 +23,12 @@ dependencies:
     - test-tube>=0.7.5
     - streamlit>=0.73.1
     - einops==0.3.0
+    - torch==2.1.0
     - torch-fidelity==0.3.0
-    - transformers==4.19.2
+    - transformers==4.35.0
     - torchmetrics==0.6.0
     - kornia==0.6
+    - xformers==0.0.22.post7
     - -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
     - -e git+https://github.com/openai/CLIP.git@main#egg=clip
     - -e .

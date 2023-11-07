@@ -2,8 +2,9 @@
 
 This repository is based on [Stable diffusion](https://github.com/CompVis/stable-diffusion). We are generating real face images fro tasks such as eyes close-open, glasses on-off and hat on-off detection. 
 
-  
+
 ## Requirements
+[Mamba](https://mamba.readthedocs.io/en/latest/mamba-installation.html#mamba-install) package manager is recommended over conda. After installation just replace conda in every command with mamba.
 A suitable [conda](https://conda.io/) environment named `face-gen` can be created and activated with:
 
 ```
@@ -11,24 +12,15 @@ conda env create -f environment.yaml
 conda activate face-gen
 ```
 
-You can also update an existing [latent diffusion](https://github.com/CompVis/latent-diffusion) environment by running
-
-```
-conda install pytorch torchvision -c pytorch
-pip install transformers==4.19.2 diffusers invisible-watermark
-pip install -e .
-``` 
-PS: This environment file is incomplete at the moment. Please follow the instructions above and then install the additional libraries yourself. Update to the environment file coming soon.
-
 ## Face generation Script
 Tune the parameters in params.py to generate images according to your machine's capacity.
 
 ```
-python demo.py
+python face_gen.py
 ```
 
 ## Images generated
-Generated images can be found in specs_data folder.
+Generated images can be found in face_gen_data folder.
 
 ## Reference
 
