@@ -1,6 +1,6 @@
 # Face generation for various tasks
 
-This repository is based on [Stable diffusion](https://github.com/CompVis/stable-diffusion). We are generating real face images fro tasks such as eyes close-open, glasses on-off and hat on-off detection. 
+This repository is based on [Stable diffusion](https://github.com/CompVis/stable-diffusion). We are generating real face images for tasks such as eyes close-open, glasses on-off and hat on-off detection. 
 
 
 ## Requirements
