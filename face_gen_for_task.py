@@ -6,7 +6,7 @@ import torch
 from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 from xformers.ops import MemoryEfficientAttentionFlashAttentionOp
 
-from prompt_design import get_prompt_list, get_prompt_list_for_task_string
+from prompt_design import get_prompt_list
 import params
 import constant
 
@@ -34,21 +34,6 @@ def generate_faces_for_face_task(args, pipe, task):
 
     return image_list, prompt_input
 
-    directory = f"{args.output_dir}/{task}"
-
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    num_files = len(os.listdir(directory))
-
-    for i, image in enumerate(image_list):
-        counter = i + num_files
-        fname = f"{prompt_input[i]}_{counter}.png"
-        fname = fname.replace(" ", "_").lower()
-        file_path = f"{directory}/{fname}"
-        
-        image.save(file_path)
-
 def write_image_to_directory(args, image_list, task, prompt_input):
     directory = args.output_dir
     if task is not None:
@@ -71,14 +56,6 @@ def write_image_to_directory(args, image_list, task, prompt_input):
 # For glasses
 # for i in range(0, 7):
 # 	generate_faces(pipe, params.task_list[i])
-
-# generate_faces(pipe, params.eyes_task[1])
-
-# for l in range(100000):
-# 	# generate_faces(pipe, params.eyes_task[0])
-# 	generate_faces(pipe, params.eyes_task[0])
-# 	generate_faces(pipe, params.eyes_task[1])
-# 	print("Loop number done: ", l)
 
 # For sunglasses
 # for i in range(7, 9):
@@ -185,43 +162,3 @@ if __name__ == "__main__":
         print(f"Time taken: {str(time_taken)}")
 
         write_image_to_directory(args, image_list, None, prompt_input)
-		
-        
-
-# def test_prompts(pos_prompt, neg_prompt):
-# 	prompt_input, negative_prompt_input = get_prompt_list_for_task_string("blinking")
-
-# 	# prompt_input = [pos_prompt] * params.num_images
-# 	# negative_prompt_input = [neg_prompt] * params.num_images
-
-# 	start_time = time.time()
-# 	# image_list = pipe(prompt=prompt, num_images_per_prompt=1, num_inference_steps=70).images
-# 	image_list = pipe(
-# 		prompt=prompt_input,
-# 		negative_prompt=negative_prompt_input,
-# 		num_inference_steps=60,
-# 		height=params.image_size,
-# 		width=params.image_size,
-# 	).images
-
-# 	time_taken = time.time() - start_time
-# 	time_taken = timedelta(seconds=round(time_taken, 2))
-# 	# formatted_time_diff = str(time_taken)
-
-# 	print(f"Time taken: {str(time_taken)}")
-
-# 	directory = f"face_gen_sd15_blinking"
-
-# 	if not os.path.exists(directory):
-# 		os.makedirs(directory)
-
-# 	num_images = len(os.listdir(directory))
-
-# 	for i, image in enumerate(image_list):
-# 		counter = i + num_images
-# 		# image.save(f"images/face_{i}.png")
-# 		file_path = f"{directory}/{prompt_input[i]}_{counter}.png"
-
-# 		image.save(file_path)
-
-# test_prompts(None, None)
