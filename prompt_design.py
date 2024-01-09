@@ -34,6 +34,21 @@ def get_prompt_list(task, num_images=params.num_images):
     return prompt_list, neg_prompt_list
 
 
+def get_prompt_list_for_task_string(task, num_images=params.num_images):
+    prompt_list = []
+
+    for _ in range(num_images):
+        race = np.random.choice(params.race_list)
+        gender = np.random.choice(params.gender_list)
+        prompt = f"Face of a {race} {gender} {task}"
+        prompt_list.append(prompt)
+    
+    prompt_list.sort()
+    neg_prompt_list = [params.negative_prompt]*num_images
+
+    return prompt_list, neg_prompt_list
+
+
 # def get_prompt_list():
 #     race = race_list[0]
 #     gender = gender_list[2]
