@@ -1,0 +1,54 @@
+Documentation of experiments
+
+Exp 01 -
+
+Using stable diffusion 1.5 instead of 2.1 to generate eyes open/close images
+
+Prompt - 
+For eyes closed - Face of a {race} {gender} with eyes closed
+For eyes open - Face of a {race} {gender}
+Negative prompt - "animated, cartoon, sketch, painting"
+
+Observation - 
+Even this model struggles with asian eyes similar to SD 2.1
+Some races like indian are represented better and more realistic
+Overall better quality, realistic images
+Quite less hallucination compared to 2.1
+
+Exp 02 -
+Using SD 1.5 to generate images of face wearing glasses
+
+Prompts - 
+Face of a person with specular reflection on glasses
+	Face of a person with reflection on glasses
+	Face of a person with haze on glasses
+	Face of a person with reflection off computer screen on glasses
+Negative prompt - "animated, cartoon, sketch, painting"
+
+Observation - 
+1. Stable diffusion 1.5 generating good images with glasses
+2. It is hallucinating for glaze on glasses
+3. Struggling with reflection on glasses
+4. There are 2 to 4 good images out of 80 for glaze
+
+Exp 03 -
+Using SD 1.5 to generate image of people with one eye closed 
+
+Prompts -
+	Face of a person with one eye closed
+	Face of a {race} {gender} winking
+
+Observations-
+Model generated both eye closed images 
+
+
+
+Exp 04 -
+Using SD 1.5 to generate bad eye quality images
+
+Prompts - 
+	Face of a person with dark shadow on eyes
+
+
+
+
